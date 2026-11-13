@@ -1,14 +1,16 @@
 import type { Metadata } from 'next';
 
+import { pageMeta } from '@/shared/lib';
 import { ContactList, PageIntro } from '@/shared/ui';
 
 import styles from '../../styles/pages/contacts.module.css';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: 'Контакты',
-  description: 'Телефон, WhatsApp, Telegram и почта «Цеха Климата». Вентиляция и кондиционирование в Москве.',
-  alternates: { canonical: '/contacts/' },
-};
+  description:
+    'Телефон, WhatsApp, Telegram и почта «Цеха Климата». Вентиляция и кондиционирование в Москве.',
+  path: '/contacts/',
+});
 
 const PREPARE = [
   'Планировку или дизайн-проект, если он есть',

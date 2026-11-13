@@ -10,6 +10,8 @@ export {
   IconPhone,
   IconTelegram,
   IconWhatsapp,
+  IconZoomIn,
+  IconZoomOut,
 } from './icons';
 export { JsonLd } from './json-ld';
 export { Logo, LogoMark } from './logo';

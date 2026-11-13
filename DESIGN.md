@@ -2,9 +2,9 @@
 name: Цех Климата
 description: Вентиляция и кондиционирование, спрятанные в потолке. Палитра стройки, трассы вместо декора.
 colors:
-  concrete: "#bdbab2"
-  concrete-2: "#a9a69e"
-  concrete-3: "#cfccc5"
+  concrete: "#e6e4de"
+  concrete-2: "#d3d0c8"
+  concrete-3: "#edebe6"
   soot: "#1d1d1b"
   soot-2: "#2b2b28"
   soot-line: "#3a3a36"

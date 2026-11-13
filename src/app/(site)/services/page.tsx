@@ -2,19 +2,19 @@ import type { Metadata } from 'next';
 
 import { getProjectFile } from '@/entities/project';
 import { SERVICES } from '@/entities/service';
-import { photoSrc, typograph } from '@/shared/lib';
+import { pageMeta, photoSrc, typograph } from '@/shared/lib';
 import { PageIntro } from '@/shared/ui';
 import { ContactClose } from '@/widgets/contact-close';
 import { WorkProcess } from '@/widgets/work-process';
 
 import styles from '../../styles/pages/services.module.css';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: 'Услуги: вентиляция, кондиционирование, проектирование и сервис',
   description:
     'Приточно-вытяжная вентиляция с рекуперацией, канальные кондиционеры, мультисплит и VRF, очистка и увлажнение воздуха, проектирование, монтаж и обслуживание в Москве.',
-  alternates: { canonical: '/services/' },
-};
+  path: '/services/',
+});
 
 export default function ServicesPage() {
   const plan = getProjectFile('capital-towers', 'plan.webp');

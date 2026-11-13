@@ -55,3 +55,11 @@ export const getProjectFile = (folder: string, file: string) => {
 
   return { src: `${PROJECTS_IMG_ROOT}/${folder}/${file}`, ...readWebpSize(abs) };
 };
+
+export const getProjectOg = (folder: string) => {
+  const file = path.join(PUBLIC_DIR, PROJECTS_IMG_ROOT, folder, 'og.jpg');
+
+  return fs.existsSync(file)
+    ? { url: `${PROJECTS_IMG_ROOT}/${folder}/og.jpg`, width: 1200, height: 630 }
+    : undefined;
+};

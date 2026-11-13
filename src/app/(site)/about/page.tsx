@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { getProjectPhoto } from '@/entities/project';
+import { pageMeta } from '@/shared/lib';
 import { PageIntro } from '@/shared/ui';
 import { ContactClose } from '@/widgets/contact-close';
 import { PartnersBand } from '@/widgets/partners-band';
@@ -8,12 +9,12 @@ import { WorkProcess } from '@/widgets/work-process';
 
 import styles from '../../styles/pages/about.module.css';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: 'О компании',
   description:
     '«Цех Климата» — инженерная команда в Москве. Более 8 лет проектируем и монтируем вентиляцию и кондиционирование для квартир, домов и коммерческих помещений.',
-  alternates: { canonical: '/about/' },
-};
+  path: '/about/',
+});
 
 const PRINCIPLES = [
   {

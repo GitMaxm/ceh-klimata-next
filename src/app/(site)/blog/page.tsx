@@ -1,17 +1,18 @@
 import type { Metadata } from 'next';
 
 import { getPosts, PostCard } from '@/entities/post';
+import { pageMeta } from '@/shared/lib';
 import { PageIntro } from '@/shared/ui';
 import { ContactClose } from '@/widgets/contact-close';
 
 import styles from '../../styles/pages/blog.module.css';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: 'Блог о вентиляции и кондиционировании',
   description:
     'Статьи «Цеха Климата» о приточной вентиляции, канальных кондиционерах и о том, на какой стадии ремонта закладывать климатическую систему.',
-  alternates: { canonical: '/blog/' },
-};
+  path: '/blog/',
+});
 
 export default function BlogPage() {
   const posts = getPosts();

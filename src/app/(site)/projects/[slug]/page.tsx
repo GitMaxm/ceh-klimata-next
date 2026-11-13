@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
-import { getProject, getProjectFile, getProjectPhoto, getProjectPhotos, getProjects, ProjectSpecs } from '@/entities/project';
+import { getProject, getProjectFile, getProjectOg, getProjectPhoto, getProjectPhotos, getProjects, ProjectSpecs } from '@/entities/project';
 import { PhotoViewer } from '@/features/photo-viewer';
-import { typograph } from '@/shared/lib';
+import { pageMeta, typograph } from '@/shared/lib';
 import { PageIntro } from '@/shared/ui';
 import { ContactClose } from '@/widgets/contact-close';
 
@@ -25,16 +25,13 @@ export const generateMetadata = async ({ params }: TProps): Promise<Metadata> =>
     return {};
   }
 
-  return {
+  return pageMeta({
     title: `${project.title}: вентиляция и кондиционирование`,
     description: project.summary,
-    alternates: { canonical: `/projects/${project.slug}/` },
-    openGraph: {
-      title: `${project.title} — Цех Климата`,
-      description: project.summary,
-      images: [{ url: `/img/projects/${project.folder}/full/${project.cover}.webp`, width: 1600, height: 1200 }],
-    },
-  };
+    path: `/projects/${project.slug}/`,
+    socialTitle: `${project.title} — Цех Климата`,
+    image: getProjectOg(project.folder),
+  });
 };
 
 export default async function ProjectPage({ params }: TProps) {
@@ -46,6 +43,7 @@ export default async function ProjectPage({ params }: TProps) {
   }
 
   const cover = getProjectPhoto(project.folder, project.cover);
+  const before = getProjectPhoto(project.folder, project.before);
   const photos = getProjectPhotos(project.folder);
   const plan = project.plan ? getProjectFile(project.folder, project.plan) : null;
 
@@ -65,10 +63,23 @@ export default async function ProjectPage({ params }: TProps) {
         }
       />
 
-      {cover && (
-        <div className={styles.cover}>
-          <img src={cover.src} alt={`${project.title}: готовая комната со щелевым диффузором`} width={cover.width} height={cover.height} fetchPriority="high" />
-        </div>
+      {cover && before && (
+        <section className={styles.stages} aria-label="Монтаж и готовый интерьер">
+          <div className={`wrap ${styles.stagesGrid}`}>
+            <figure className={styles.stage}>
+              <figcaption>Монтаж до отделки</figcaption>
+              <div className={styles.stageFrame}>
+                <img src={before.src} alt={`${project.title}: трассы под бетонным потолком до отделки`} width={before.width} height={before.height} fetchPriority="high" />
+              </div>
+            </figure>
+            <figure className={styles.stage}>
+              <figcaption>Готовая квартира</figcaption>
+              <div className={styles.stageFrame}>
+                <img src={cover.src} alt={`${project.title}: готовая комната со щелевым диффузором`} width={cover.width} height={cover.height} fetchPriority="high" />
+              </div>
+            </figure>
+          </div>
+        </section>
       )}
 
       <section className={`section ${styles.work}`}>

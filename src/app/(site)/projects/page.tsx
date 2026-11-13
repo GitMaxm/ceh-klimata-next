@@ -1,16 +1,18 @@
 import type { Metadata } from 'next';
 
 import { getProjects, ProjectCard } from '@/entities/project';
+import { pageMeta } from '@/shared/lib';
 import { PageIntro } from '@/shared/ui';
 import { ContactClose } from '@/widgets/contact-close';
 
 import styles from '../../styles/pages/projects.module.css';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMeta({
   title: 'Проекты',
-  description: 'Объекты «Цеха Климата» в Москве: вентиляция и кондиционирование квартир с фотоотчётом монтажа и готового интерьера.',
-  alternates: { canonical: '/projects/' },
-};
+  description:
+    'Объекты «Цеха Климата» в Москве: вентиляция и кондиционирование квартир с фотоотчётом монтажа и готового интерьера.',
+  path: '/projects/',
+});
 
 export default function ProjectsPage() {
   const projects = getProjects();

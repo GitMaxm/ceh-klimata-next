@@ -66,6 +66,8 @@
   color: var(--plaster);
   display: none;
   flex-direction: column;
+  overflow: hidden;
+  overscroll-behavior: contain;
   opacity: 1;
   transition:
     opacity 200ms var(--ease-out),
@@ -92,7 +94,8 @@
   align-items: center;
   justify-content: center;
   padding: clamp(12px, 3vw, 40px);
-  touch-action: pan-y;
+  overflow: hidden;
+  touch-action: none;
   user-select: none;
 }
 
@@ -102,6 +105,22 @@
   width: auto;
   height: auto;
   object-fit: contain;
+  cursor: zoom-in;
+  transform-origin: center;
+  transition: transform 220ms var(--ease-out);
+  will-change: transform;
+}
+
+.stage[data-zoomed='true'] .full {
+  cursor: grab;
+}
+
+.stage[data-dragging='true'] .full {
+  transition: none;
+}
+
+.stage[data-zoomed='true'][data-dragging='true'] .full {
+  cursor: grabbing;
 }
 
 .bar {

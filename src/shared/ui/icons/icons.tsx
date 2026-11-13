@@ -50,3 +50,17 @@ export const IconMenu = (props: TIconProps) => (
     <path d="M3 7h18M3 12h18M3 17h18" />
   </svg>
 );
+
+export const IconZoomIn = (props: TIconProps) => (
+  <svg {...base} {...props}>
+    <circle cx="10.5" cy="10.5" r="6.5" />
+    <path d="M15.5 15.5 21 21M10.5 7.5v6M7.5 10.5h6" />
+  </svg>
+);
+
+export const IconZoomOut = (props: TIconProps) => (
+  <svg {...base} {...props}>
+    <circle cx="10.5" cy="10.5" r="6.5" />
+    <path d="M15.5 15.5 21 21M7.5 10.5h6" />
+  </svg>
+);

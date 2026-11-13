@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 
 import { getPost, getPosts, PostBody } from '@/entities/post';
 import { SITE_NAME, SITE_URL } from '@/shared/config';
-import { formatDate } from '@/shared/lib';
+import { formatDate, pageMeta } from '@/shared/lib';
 import { JsonLd, PageIntro } from '@/shared/ui';
 import { BlogPreview } from '@/widgets/blog-preview';
 import { ContactClose } from '@/widgets/contact-close';
@@ -26,18 +26,15 @@ export const generateMetadata = async ({ params }: TProps): Promise<Metadata> =>
     return {};
   }
 
-  return {
+  return pageMeta({
     title: post.title,
     description: post.description,
-    alternates: { canonical: `/blog/${post.slug}/` },
-    openGraph: {
-      type: 'article',
-      title: post.title,
-      description: post.description,
-      publishedTime: post.date,
-      images: [{ url: post.og, width: 1200, height: 630 }],
-    },
-  };
+    path: `/blog/${post.slug}/`,
+    socialTitle: post.title,
+    type: 'article',
+    publishedTime: post.date,
+    image: { url: post.og, width: 1200, height: 630 },
+  });
 };
 
 export default async function PostPage({ params }: TProps) {
