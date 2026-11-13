@@ -1,0 +1,49 @@
+.section {
+  background: var(--plaster);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(40px, 6vw, 96px);
+  align-items: start;
+}
+
+.list {
+  margin-top: 40px;
+}
+
+.subTitle {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+}
+
+.prepare {
+  list-style: none;
+  margin-top: 24px;
+  border-top: 1px solid rgba(29, 29, 27, 0.2);
+}
+
+.prepare li {
+  position: relative;
+  padding: 14px 0 14px 32px;
+  border-bottom: 1px solid rgba(29, 29, 27, 0.2);
+}
+
+.prepare li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 25px;
+  width: 16px;
+  height: 4px;
+  background: var(--soot);
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-13T21:59:58+00:00",
+  "title": "Design System: Цех Климата",
+  "extensions": {
+    "colorMeta": {
+      "lime": {
+        "role": "primary",
+        "displayName": "Салатовый гофр (воздух, действие)",
+        "canonical": "oklch(76.3% 0.175 130)",
+        "tonalRamp": [
+          "#001100",
+          "#013200",
+          "#225400",
+          "#437700",
+          "#659c00",
+          "#89c33a",
+          "#b8e18e",
+          "#e5f5d5"
+        ]
+      },
+      "lime-hover": {
+        "role": "primary",
+        "displayName": "Салатовый, наведение"
+      },
+      "red": {
+        "role": "secondary",
+        "displayName": "Спринклерный красный (холод, фреон)",
+        "canonical": "oklch(59.5% 0.209 29)",
+        "tonalRamp": [
+          "#2b0000",
+          "#610000",
+          "#950000",
+          "#c10106",
+          "#ea473a",
+          "#ff8171",
+          "#ffb7aa",
+          "#ffe5df"
+        ]
+      },
+      "concrete": {
+        "role": "neutral",
+        "displayName": "Бетон",
+        "canonical": "oklch(78.9% 0.012 90)",
+        "tonalRamp": [
+          "#0d0b07",
+          "#292620",
+          "#47453e",
+          "#69665f",
+          "#8c8981",
+          "#b1aea6",
+          "#d3d1cb",
+          "#efeeec"
+        ]
+      },
+      "concrete-2": {
+        "role": "neutral",
+        "displayName": "Бетон, тень (подложка фото)"
+      },
+      "concrete-3": {
+        "role": "neutral",
+        "displayName": "Бетон, светлый"
+      },
+      "soot": {
+        "role": "neutral",
+        "displayName": "Сажа",
+        "canonical": "oklch(23.0% 0.004 107)",
+        "tonalRamp": [
+          "#0b0b0a",
+          "#272724",
+          "#454543",
+          "#666664",
+          "#898987",
+          "#aeaeab",
+          "#d1d1cf",
+          "#eeeeee"
+        ]
+      },
+      "soot-2": {
+        "role": "neutral",
+        "displayName": "Сажа, наведение"
+      },
+      "soot-line": {
+        "role": "neutral",
+        "displayName": "Шов на тёмном"
+      },
+      "plaster": {
+        "role": "neutral",
+        "displayName": "Штукатурка",
+        "canonical": "oklch(95.5% 0.007 97)",
+        "tonalRamp": [
+          "#0c0b08",
+          "#272623",
+          "#464541",
+          "#676662",
+          "#8a8985",
+          "#afaea9",
+          "#d2d1cc",
+          "#efeeea"
+        ]
+      },
+      "plaster-2": {
+        "role": "neutral",
+        "displayName": "Штукатурка, тень"
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Графит (вторичный текст на светлом)"
+      },
+      "on-dark-2": {
+        "role": "neutral",
+        "displayName": "Пыль (вторичный текст на тёмном)"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Только заголовок первого экрана. Размер min(112px, calc(var(--wrap) / 11.8)), до 13ch."
+      },
+      "headline-page": {
+        "displayName": "Headline (страница)",
+        "purpose": "Вступление внутренних страниц на саже. min(88px, calc(var(--wrap) / 11.8)), до 16ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Заголовки секций. min(64px, calc(var(--wrap) / 11)), до 18ch, balance."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Услуги, статьи, принципы, шаги."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "Одна-две фразы под заголовком, до 58ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Основной текст."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Подписи колонок и подзаголовки блоков над полосой 2px сажи; кнопки 16px/700. Без капса."
+      },
+      "data": {
+        "displayName": "Data (Martian Mono)",
+        "purpose": "Только цифры и точные значения: характеристики, контакты, даты, номера шагов."
+      }
+    },
+    "shadows": [
+      {
+        "name": "outline-inset",
+        "value": "inset 0 0 0 1.5px var(--soot)",
+        "purpose": "Контур контурных кнопок и кнопки «Показать ещё»: штукатурка на тёмном, сажа на светлом. Не подъём."
+      },
+      {
+        "name": "node-knockout",
+        "value": "0 0 0 4px var(--step-ground, var(--concrete))",
+        "purpose": "Кольцо цвета фона вокруг узла линии этапов, вырезает его из трассы."
+      },
+      {
+        "name": "fixed-bar",
+        "value": "0 -8px 24px -12px rgba(0, 0, 0, 0.5)",
+        "purpose": "Только закреплённая мобильная панель контактов над прокручиваемым содержимым."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.23, 1, 0.32, 1)",
+        "purpose": "Состояния: наведение, нажатие (scale 0.97, 160ms), появление первого экрана (700ms, шаг 70ms), рост трассы и подчёркиваний (250 до 300ms)."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.77, 0, 0.175, 1)",
+        "purpose": "Раскрытие фото clip-path сверху вниз (1100ms, шаг 120ms) и прорисовка линии этапов (1400ms)."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: no-preference",
+        "purpose": "Все входные анимации и прорисовки работают только при этом условии."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "mobile-bar",
+        "value": "720px"
+      },
+      {
+        "name": "stack",
+        "value": "900px"
+      },
+      {
+        "name": "menu",
+        "value": "960px"
+      },
+      {
+        "name": "grid-2",
+        "value": "1000px"
+      },
+      {
+        "name": "nav-tight",
+        "value": "1100px"
+      },
+      {
+        "name": "grid-1",
+        "value": "640px"
+      }
+    ],
+    "colorNotes": {
+      "routeInkOnLight": {
+        "air-ink": "#386d13",
+        "cold-ink": "#b8251d",
+        "reason": "lime on concrete is 1.04:1"
+      }
+    }
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Главное действие («Позвонить»). Одна в группе.",
+      "html": "<button class=\"ds-btn ds-btn-primary\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" stroke-linejoin=\"miter\" aria-hidden=\"true\"><path d=\"M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z\"/></svg>Позвонить</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;font-family: var(--font-sans, Geologica, system-ui, sans-serif);font-weight:700;font-size:16px;line-height:1;border:0;border-radius:0;cursor:pointer;transition:transform 160ms cubic-bezier(0.23,1,0.32,1),background-color 200ms ease,color 200ms ease}.ds-btn:active{transform:scale(0.97)}.ds-btn:focus-visible{outline:2px solid var(--lime,#8dc73f);outline-offset:3px}.ds-btn svg{width:18px;height:18px}.ds-btn-primary{background:var(--lime,#8dc73f);color:var(--soot,#1d1d1b)}.ds-btn-primary:hover{background:var(--lime-hover,#9bd34c)}"
+    },
+    {
+      "name": "Dark Button",
+      "kind": "button",
+      "refersTo": "button-dark",
+      "description": "Второе действие на светлых фонах (мессенджер).",
+      "html": "<button class=\"ds-btn ds-btn-dark\">Написать в Telegram</button>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;font-family: var(--font-sans, Geologica, system-ui, sans-serif);font-weight:700;font-size:16px;line-height:1;border:0;border-radius:0;cursor:pointer;transition:transform 160ms cubic-bezier(0.23,1,0.32,1),background-color 200ms ease,color 200ms ease}.ds-btn:active{transform:scale(0.97)}.ds-btn:focus-visible{outline:2px solid var(--lime,#8dc73f);outline-offset:3px}.ds-btn svg{width:18px;height:18px}.ds-btn-dark{background:var(--soot,#1d1d1b);color:var(--plaster,#f1f0eb)}.ds-btn-dark:hover{background:var(--soot-2,#2b2b28)}"
+    },
+    {
+      "name": "Outline Button (on dark)",
+      "kind": "button",
+      "refersTo": "button-outline-light",
+      "description": "Мессенджеры на тёмных полосах и на первом экране.",
+      "html": "<div style=\"background:#1d1d1b;padding:24px\"><button class=\"ds-btn ds-btn-outline-light\">Написать в WhatsApp</button></div>",
+      "css": ".ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:56px;padding:0 26px;font-family: var(--font-sans, Geologica, system-ui, sans-serif);font-weight:700;font-size:16px;line-height:1;border:0;border-radius:0;cursor:pointer;transition:transform 160ms cubic-bezier(0.23,1,0.32,1),background-color 200ms ease,color 200ms ease}.ds-btn:active{transform:scale(0.97)}.ds-btn:focus-visible{outline:2px solid var(--lime,#8dc73f);outline-offset:3px}.ds-btn svg{width:18px;height:18px}.ds-btn-outline-light{background:transparent;color:var(--plaster,#f1f0eb);box-shadow:inset 0 0 0 1.5px var(--plaster,#f1f0eb)}.ds-btn-outline-light:hover{background:var(--plaster,#f1f0eb);color:var(--soot,#1d1d1b)}"
+    },
+    {
+      "name": "Site Header",
+      "kind": "nav",
+      "refersTo": "site-header",
+      "description": "Липкая шапка сажи 72px; активный пункт подчёркнут салатовой линией 2px.",
+      "html": "<header class=\"ds-header\"><span class=\"ds-logo\">Цех Климата</span><nav class=\"ds-nav\"><a href=\"#\">Проекты</a><a href=\"#\" aria-current=\"page\">Услуги</a><a href=\"#\">О компании</a><a href=\"#\">Блог</a><a href=\"#\">Контакты</a></nav><a class=\"ds-phone\" href=\"#\">+7 (967) 066-66-13</a></header>",
+      "css": ".ds-header{display:flex;align-items:center;gap:40px;height:72px;padding:0 24px;background:var(--soot,#1d1d1b);color:var(--plaster,#f1f0eb);border-bottom:1px solid var(--soot-line,#3a3a36);font-family: var(--font-sans, Geologica, system-ui, sans-serif);}.ds-logo{font-weight:800;font-size:19px;letter-spacing:-0.01em}.ds-nav{display:flex;gap:28px;margin-left:auto}.ds-nav a{position:relative;padding:12px 0;font-size:15px;font-weight:500;color:inherit;text-decoration:none}.ds-nav a::after{content:'';position:absolute;left:0;right:0;bottom:6px;height:2px;background:var(--lime,#8dc73f);transform:scaleX(0);transform-origin:left;transition:transform 250ms cubic-bezier(0.23,1,0.32,1)}.ds-nav a:hover::after,.ds-nav a[aria-current=page]::after{transform:scaleX(1)}.ds-nav a:focus-visible,.ds-phone:focus-visible{outline:2px solid var(--lime,#8dc73f);outline-offset:3px}.ds-phone{font-family:var(--font-mono,'Martian Mono',ui-monospace,monospace);font-size:15px;font-weight:600;color:inherit;text-decoration:none;transition:color 200ms ease}.ds-phone:hover{color:var(--lime,#8dc73f)}"
+    },
+    {
+      "name": "Service Grid with Route Pipes",
+      "kind": "card",
+      "refersTo": "service-cell",
+      "description": "Ячейки услуг на шве 1px; трасса 6px окрашена по route: air, cold, work.",
+      "html": "<ul class=\"ds-grid\"><li class=\"ds-cell\"><span class=\"ds-pipe\" data-route=\"air\"></span><h3>Приточно-вытяжная вентиляция</h3><p>Свежий воздух при закрытых окнах.</p></li><li class=\"ds-cell\"><span class=\"ds-pipe\" data-route=\"cold\"></span><h3>Кондиционирование</h3><p>Канальные кондиционеры, мультисплит и VRF.</p></li><li class=\"ds-cell\"><span class=\"ds-pipe\" data-route=\"work\"></span><h3>Монтаж и пусконаладка</h3><p>Ровные трассы в потолке.</p></li></ul>",
+      "css": ".ds-grid{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--soot-line,#3a3a36);border:1px solid var(--soot-line,#3a3a36);font-family: var(--font-sans, Geologica, system-ui, sans-serif);}.ds-cell{display:flex;flex-direction:column;min-height:220px;padding:32px 28px 36px;background:var(--soot,#1d1d1b);color:var(--plaster,#f1f0eb);transition:background-color 250ms ease}.ds-cell:hover{background:var(--soot-2,#2b2b28)}.ds-pipe{display:block;width:56px;height:6px;background:var(--lime,#8dc73f);transform-origin:left;transition:transform 300ms cubic-bezier(0.23,1,0.32,1)}.ds-pipe[data-route=cold]{background:var(--red,#e0352b)}.ds-pipe[data-route=work]{background:var(--plaster,#f1f0eb)}.ds-cell:hover .ds-pipe{transform:scaleX(1.6)}.ds-cell h3{margin:28px 0 0;font-size:24px;font-weight:700;line-height:1.12;letter-spacing:-0.015em}.ds-cell p{margin:auto 0 0;padding-top:20px;color:var(--on-dark-2,#aaa8a1);font-size:16px;line-height:1.5}"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "project-card",
+      "description": "Карточка объекта: фото 4:3 и тело на саже с характеристиками моноширинным.",
+      "html": "<a class=\"ds-project\" href=\"#\"><div class=\"ds-project-media\"></div><div class=\"ds-project-body\"><h3>ЖК «Capital Towers»</h3><p class=\"ds-project-meta\">Квартира в жилом комплексе, Москва</p><dl class=\"ds-specs\"><div><dt>Площадь</dt><dd>200 м²</dd></div><div><dt>Монтаж</dt><dd>22 дня</dd></div></dl><span class=\"ds-go\">Смотреть объект <svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.8\" stroke-linecap=\"square\" aria-hidden=\"true\"><path d=\"M4 12h15M13 6l6 6-6 6\"/></svg></span></div></a>",
+      "css": ".ds-project{display:grid;grid-template-columns:1.45fr 1fr;background:var(--soot,#1d1d1b);color:var(--plaster,#f1f0eb);text-decoration:none;transition:transform 250ms cubic-bezier(0.23,1,0.32,1);font-family: var(--font-sans, Geologica, system-ui, sans-serif);}.ds-project:hover{transform:translateY(-2px)}.ds-project:focus-visible{outline:2px solid var(--lime,#8dc73f);outline-offset:3px}.ds-project-media{aspect-ratio:4/3;background:var(--soot-2,#2b2b28)}.ds-project-body{display:flex;flex-direction:column;padding:32px}.ds-project h3{margin:0;font-weight:800;font-size:32px;line-height:1.05;letter-spacing:-0.02em}.ds-project-meta{margin:10px 0 0;color:var(--on-dark-2,#aaa8a1);font-size:16px}.ds-specs{margin:auto 0 0;padding-top:32px;font-family:var(--font-mono,'Martian Mono',ui-monospace,monospace);font-size:14px;font-variant-numeric:tabular-nums}.ds-specs div{display:flex;justify-content:space-between;padding:13px 0;border-top:1px solid var(--soot-line,#3a3a36)}.ds-specs dt{color:var(--on-dark-2,#aaa8a1)}.ds-specs dd{margin:0}.ds-go{display:inline-flex;align-items:center;gap:10px;margin-top:24px;font-weight:700;color:var(--lime,#8dc73f)}.ds-go svg{transition:transform 250ms cubic-bezier(0.23,1,0.32,1)}.ds-project:hover .ds-go svg{transform:translateX(4px)}"
+    },
+    {
+      "name": "Work Process Line",
+      "kind": "custom",
+      "description": "Линия этапов: трасса сажи 6px с квадратными узлами, номера моноширинным.",
+      "html": "<ol class=\"ds-steps\"><li><span class=\"ds-num\">01</span><h4>Подбор оборудования</h4></li><li><span class=\"ds-num\">02</span><h4>Проектирование</h4></li><li><span class=\"ds-num\">03</span><h4>Монтаж</h4></li></ol>",
+      "css": ".ds-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;border-top:6px solid var(--soot,#1d1d1b);background:var(--concrete,#bdbab2);font-family: var(--font-sans, Geologica, system-ui, sans-serif);}.ds-steps li{position:relative;padding-top:36px}.ds-steps li::before{content:'';position:absolute;left:0;top:-12px;width:18px;height:18px;background:var(--soot,#1d1d1b);box-shadow:0 0 0 4px var(--concrete,#bdbab2)}.ds-num{font-family:var(--font-mono,'Martian Mono',ui-monospace,monospace);font-size:13px;color:var(--ink-2,#45443f)}.ds-steps h4{margin:8px 0 0;font-size:21px;font-weight:700;line-height:1.15;letter-spacing:-0.01em}"
+    },
+    {
+      "name": "Contact List",
+      "kind": "custom",
+      "description": "Строки контактов между волосяными линиями; значение моноширинным, подчёркивание вырастает при наведении.",
+      "html": "<ul class=\"ds-contacts\"><li><span>Телефон</span><a href=\"#\">+7 (967) 066-66-13</a></li><li><span>Почта</span><a href=\"#\">ckvent@yandex.ru</a></li></ul>",
+      "css": ".ds-contacts{list-style:none;margin:0;padding:0;border-top:1px solid rgba(29,29,27,0.2);color:var(--soot,#1d1d1b);font-family: var(--font-sans, Geologica, system-ui, sans-serif);}.ds-contacts li{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:64px;border-bottom:1px solid rgba(29,29,27,0.2)}.ds-contacts span{color:var(--ink-2,#45443f);font-size:15px}.ds-contacts a{font-family:var(--font-mono,'Martian Mono',ui-monospace,monospace);font-size:16px;color:inherit;text-decoration:none;background-image:linear-gradient(currentColor,currentColor);background-size:0 1.5px;background-position:0 100%;background-repeat:no-repeat;transition:background-size 250ms cubic-bezier(0.23,1,0.32,1)}.ds-contacts li:hover a,.ds-contacts a:focus-visible{background-size:100% 1.5px}.ds-contacts a:focus-visible{outline:2px solid var(--lime,#8dc73f);outline-offset:3px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Открытый потолок",
+    "overview": "Сайт выглядит как объект до чистовой отделки: бетонная плита, сажа, штукатурка и цветные трассы, которые потом исчезнут в потолке. Цвет здесь не украшение, а маркировка инженерии: салатовый гофр воздуховода, красная фреоновая трасса, нейтральная линия этапов. Всё, что в интерьере станет невидимым, на сайте показано честно и прямо.\n\nПлотность средняя, ритм секций крупный (до 136px по вертикали), секции чередуются полосами бетона, сажи и штукатурки без переходов и разделительных декоров. Геометрия строго прямоугольная: ни одного скругления, ни стекла, ни теней, дающих подъём. Глубину создают фотографии реальных объектов и тональные полосы, а не материалы интерфейса.\n\nТипографика тяжёлая и плотная (Geologica 800 с отрицательным трекингом), данные и измерения набраны моноширинным Martian Mono, как в исполнительной документации.",
+    "keyCharacteristics": [
+      "Палитра со стройки: бетон, сажа, штукатурка; два цвета трасс.",
+      "Трасса 6px как главный повторяющийся знак: метка услуги, линия этапов, маркер решения.",
+      "Прямые углы везде, сетки из ячеек с волосяным швом 1px.",
+      "Фото объектов до и после отделки как основной визуальный материал.",
+      "Моноширинный шрифт только для цифр, адресов, контактов и счётчиков."
+    ],
+    "rules": [
+      {
+        "name": "The Route Colour Rule",
+        "body": "Цвет трассы задаётся данными, а не вкусом: поле `route` в услугах и решениях проекта принимает `air` (салатовый), `cold` (красный) или `work` (нейтральный: штукатурка на тёмном, сажа на светлом). Новый цвет трассы не вводится без нового инженерного смысла.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Action Colour Rule",
+        "body": "Салатовый остаётся единственным цветом действия. Красный никогда не становится кнопкой или ссылкой, чтобы не спорить с ним.",
+        "section": "colors"
+      },
+      {
+        "name": "The Soot Marker Rule",
+        "body": "Маркеры списков (полоса 16 x 4px) и линия этапов работы всегда сажа на светлом; цветные метки зарезервированы за трассами услуг.",
+        "section": "colors"
+      },
+      {
+        "name": "The Mono Means Measurement Rule",
+        "body": "Martian Mono используется только для цифр и точных значений: площадь, сроки, телефоны, даты, номера. Заголовки и пояснения моноширинным не набираются.",
+        "section": "typography"
+      },
+      {
+        "name": "The No Caps Rule",
+        "body": "В системе нет капса и разреженных подписей. Иерархию дают вес и размер Geologica.",
+        "section": "typography"
+      },
+      {
+        "name": "The Flat Slab Rule",
+        "body": "Поверхности не поднимаются. Карточка при наведении смещается на 2px и чуть увеличивает фото; тени для этого не используются.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** назначать цвет трассы только через `route`: air салатовый, cold красный, work штукатурка на тёмном и сажа на светлом.",
+      "**Do** держать салатовый единственным цветом действия: в группе действий салатовая только одна кнопка, остальные сажа или контур.",
+      "**Do** собирать сетки из ячеек с зазором 1px на цвете шва вместо отступов и карточек.",
+      "**Do** набирать цифры, контакты и характеристики Martian Mono с табличными цифрами.",
+      "**Do** показывать реальные фото объектов, особенно до отделки, как основной визуальный материал.",
+      "**Do** уважать `prefers-reduced-motion`: появление и прорисовка линий выключаются."
+    ],
+    "donts": [
+      "**Don't** скруглять углы, использовать стекло (`backdrop-filter`) или тени для подъёма карточек.",
+      "**Don't** делать красный кнопкой, ссылкой или фоном; это только метка холодной трассы.",
+      "**Don't** красить маркеры списков и линию этапов в цвета трасс.",
+      "**Don't** уводить сайт в бело-синюю гамму климатической техники со снежинками и фото сплит-систем.",
+      "**Don't** набирать заголовки или пояснения капсом или моноширинным."
+    ]
+  }
+}

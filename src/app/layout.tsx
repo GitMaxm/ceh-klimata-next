@@ -1,59 +1,78 @@
 import '@/app/styles/globals.css';
-import '@/app/styles/projects.css';
 
 import type { Metadata, Viewport } from 'next';
-import { Roboto } from 'next/font/google';
+import { Geologica, Martian_Mono } from 'next/font/google';
 
-import { SITE_NAME, SITE_URL } from '@/shared/config';
+import { COMPANY_CONTACTS, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from '@/shared/config';
+import { JsonLd } from '@/shared/ui';
 
-const roboto = Roboto({
-  weight: ['400', '700'],
+const geologica = Geologica({
   subsets: ['latin', 'cyrillic'],
-  variable: '--font-roboto',
+  weight: ['400', '500', '700', '800'],
+  variable: '--font-geologica',
+  display: 'swap',
+});
+
+const martian = Martian_Mono({
+  subsets: ['latin', 'cyrillic'],
+  weight: ['400', '600'],
+  variable: '--font-martian',
   display: 'swap',
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Цех Климата | Вентиляция и Кондиционирование | airceh.ru',
-    template: `%s | ${SITE_NAME}`,
+    default: 'Вентиляция и кондиционирование в Москве — Цех Климата',
+    template: `%s — ${SITE_NAME}`,
   },
-  description:
-    'Цех Климата — профессиональная вентиляция и кондиционирование под ключ. Проектирование, подбор оборудования, монтаж и обслуживание. Создаём комфортный и свежий воздух в квартирах, домах и коммерческих помещениях.',
-  keywords:
-    'Цех Климата, вентиляция, кондиционирование, приточная вентиляция, монтаж вентиляции, системы вентиляции, кондиционеры, воздух, климат, инженерные системы, климат под ключ',
-  authors: [{ name: 'Цех Климата' }],
-  robots: 'index, follow',
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
+  alternates: { canonical: '/' },
   openGraph: {
-    title: 'Цех Климата | Вентиляция и Кондиционирование под ключ',
-    description:
-      'Проектирование, монтаж и обслуживание систем вентиляции и кондиционирования. Профессиональные решения для дома и бизнеса.',
-    url: SITE_URL,
-    images: [
-      {
-        url: '/img/og/about-logo.jpg',
-      },
-    ],
     type: 'website',
+    locale: 'ru_RU',
+    siteName: SITE_NAME,
+    url: SITE_URL,
+    title: 'Вентиляция и кондиционирование, спрятанные в потолке — Цех Климата',
+    description: SITE_DESCRIPTION,
   },
-  other: {
-    'msapplication-TileColor': '#26292d',
-  },
+  twitter: { card: 'summary_large_image' },
+  formatDetection: { telephone: false },
 };
 
 export const viewport: Viewport = {
-  themeColor: '#5c62ec',
+  themeColor: '#1d1d1b',
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 1,
-  userScalable: false,
+};
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'HVACBusiness',
+  '@id': `${SITE_URL}/#company`,
+  name: SITE_NAME,
+  url: SITE_URL,
+  description: SITE_DESCRIPTION,
+  image: `${SITE_URL}/opengraph-image.jpg`,
+  logo: `${SITE_URL}/icon.svg`,
+  telephone: COMPANY_CONTACTS.phone,
+  email: COMPANY_CONTACTS.email,
+  areaServed: { '@type': 'City', name: 'Москва' },
+  address: { '@type': 'PostalAddress', addressLocality: 'Москва', addressCountry: 'RU' },
+  knowsAbout: ['Вентиляция', 'Кондиционирование', 'Рекуперация', 'VRF-системы', 'Канальные кондиционеры'],
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ru" className={roboto.variable}>
-      <body suppressHydrationWarning>{children}</body>
+    <html lang="ru" className={`${geologica.variable} ${martian.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
+      </head>
+      <body>
+        {children}
+        <JsonLd data={organization} />
+      </body>
     </html>
   );
 }

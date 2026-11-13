@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="ui-monospace, Menlo, Consolas, monospace">
+  <rect width="800" height="600" fill="#1d1d1b"/>
+  <path d="M80 330H720" stroke="#f1f0eb" stroke-width="3"/>
+  <g fill="#1d1d1b" stroke="#f1f0eb" stroke-width="3">
+    <rect x="110" y="320" width="20" height="20"/>
+    <rect x="290" y="320" width="20" height="20"/>
+    <rect x="470" y="320" width="20" height="20"/>
+    <rect x="650" y="320" width="20" height="20"/>
+  </g>
+  <g fill="#f1f0eb" font-size="18" text-anchor="middle">
+    <text x="120" y="380">проект</text>
+    <text x="300" y="380">черновая</text>
+    <text x="480" y="380">чистовая</text>
+    <text x="660" y="380">запуск</text>
+  </g>
+  <g fill="#aaa8a1" font-size="13" text-anchor="middle">
+    <text x="120" y="404">расчёт и трассы</text>
+    <text x="300" y="404">монтаж в бетоне</text>
+    <text x="480" y="404">потолки закрыты</text>
+    <text x="660" y="404">диффузоры, настройка</text>
+  </g>
+  <rect x="120" y="250" width="200" height="12" fill="#8dc73f"/>
+  <path d="M120 236V276M320 236V276" stroke="#8dc73f" stroke-width="2"/>
+  <text x="220" y="226" fill="#8dc73f" font-size="15" text-anchor="middle">здесь закладываем систему</text>
+  <rect x="300" y="282" width="40" height="10" fill="#e0352b"/>
+  <text x="352" y="292" fill="#e0352b" font-size="13">опрессовка</text>
+  <rect x="470" y="250" width="200" height="12" fill="none" stroke="#5a5954" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="570" y="226" fill="#8a8880" font-size="15" text-anchor="middle">поздно: короба и блоки на виду</text>
+  <path d="M80 470H720" stroke="#3a3a36" stroke-width="1.5"/>
+  <text x="400" y="510" fill="#5a5954" font-size="13" text-anchor="middle">стадии ремонта</text>
+</svg>

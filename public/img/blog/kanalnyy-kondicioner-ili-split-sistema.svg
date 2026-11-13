@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="ui-monospace, Menlo, Consolas, monospace">
+  <defs>
+    <pattern id="h" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#3a3a36" stroke-width="2"/>
+    </pattern>
+    <marker id="ap" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#f1f0eb"/></marker>
+    <marker id="al" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#8dc73f"/></marker>
+  </defs>
+  <rect width="800" height="600" fill="#1d1d1b"/>
+  <rect x="40" y="70" width="720" height="34" fill="url(#h)" stroke="#f1f0eb" stroke-width="2"/>
+  <path d="M40 104V500H760V104M400 104V500" fill="none" stroke="#f1f0eb" stroke-width="2"/>
+  <rect x="64" y="150" width="150" height="46" fill="#2b2b28" stroke="#f1f0eb" stroke-width="2"/>
+  <path d="M76 186H202" stroke="#5a5954" stroke-width="2"/>
+  <path d="M64 166H40V140H10" fill="none" stroke="#e0352b" stroke-width="5"/>
+  <path d="M110 214L130 262" stroke="#f1f0eb" stroke-width="3" marker-end="url(#ap)"/>
+  <path d="M150 214L190 252" stroke="#f1f0eb" stroke-width="3" marker-end="url(#ap)"/>
+  <path d="M400 214H560M620 214H760" stroke="#f1f0eb" stroke-width="2"/>
+  <rect x="560" y="210" width="60" height="8" fill="#8dc73f"/>
+  <rect x="620" y="122" width="110" height="52" fill="#2b2b28" stroke="#f1f0eb" stroke-width="2"/>
+  <path d="M620 158H590V204" fill="none" stroke="#8dc73f" stroke-width="8"/>
+  <path d="M730 140H760H790" fill="none" stroke="#e0352b" stroke-width="5"/>
+  <path d="M700 174V196H740" fill="none" stroke="#5a5954" stroke-width="3" stroke-dasharray="6 6"/>
+  <path d="M590 240V296" stroke="#8dc73f" stroke-width="3" marker-end="url(#al)"/>
+  <path d="M570 240L548 284" stroke="#8dc73f" stroke-width="3" marker-end="url(#al)"/>
+  <path d="M610 240L632 284" stroke="#8dc73f" stroke-width="3" marker-end="url(#al)"/>
+  <text x="220" y="420" fill="#f1f0eb" font-size="20" text-anchor="middle">сплит-система</text>
+  <text x="220" y="448" fill="#aaa8a1" font-size="13" text-anchor="middle">блок на стене</text>
+  <text x="580" y="420" fill="#f1f0eb" font-size="20" text-anchor="middle">канальный</text>
+  <text x="580" y="448" fill="#aaa8a1" font-size="13" text-anchor="middle">блок над потолком · щелевой диффузор</text>
+  <path d="M40 540H400M40 532V548M400 532V548M400 540H760M760 532V548" stroke="#5a5954" stroke-width="1.5"/>
+  <text x="400" y="580" fill="#e0352b" font-size="12" text-anchor="middle">— фреоновая трасса к наружному блоку</text>
+</svg>

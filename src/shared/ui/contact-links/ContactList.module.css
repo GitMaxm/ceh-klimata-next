@@ -1,0 +1,70 @@
+.list {
+  list-style: none;
+  border-top: 1px solid var(--line);
+}
+
+.list[data-tone='on-dark'] {
+  --line: var(--soot-line);
+  --muted: var(--on-dark-2);
+  color: var(--plaster);
+}
+
+.list[data-tone='on-light'] {
+  --line: rgba(29, 29, 27, 0.2);
+  --muted: var(--ink-2);
+  color: var(--soot);
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 6px 24px;
+  min-height: 64px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.label svg {
+  width: 18px;
+  height: 18px;
+}
+
+.value {
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 16px;
+  font-variant-numeric: tabular-nums;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0 1.5px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 250ms var(--ease-out);
+}
+
+.list[data-size='large'] .value {
+  font-size: min(24px, calc(var(--wrap) / 13));
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .row:hover .value {
+    background-size: 100% 1.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}

@@ -1,0 +1,132 @@
+.specs {
+  width: min(420px, 100%);
+}
+
+.cover {
+  background: var(--soot);
+}
+
+.cover img {
+  width: 100%;
+  height: min(82svh, 860px);
+  object-fit: cover;
+}
+
+.work {
+  background: var(--concrete);
+}
+
+.workGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: clamp(40px, 6vw, 96px);
+}
+
+.task {
+  margin-top: 20px;
+  font-size: var(--fs-lede);
+  line-height: 1.5;
+  max-width: 44ch;
+}
+
+.subTitle {
+  margin-top: 48px;
+  font-size: 15px;
+  font-weight: 700;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--soot);
+}
+
+.equipment {
+  list-style: none;
+}
+
+.equipment li {
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(29, 29, 27, 0.22);
+}
+
+.solution {
+  list-style: none;
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  background: rgba(29, 29, 27, 0.2);
+  border: 1px solid rgba(29, 29, 27, 0.2);
+}
+
+.solution li {
+  padding: 28px 24px 32px;
+  background: var(--concrete);
+}
+
+.solution li::before {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 6px;
+  margin-bottom: 22px;
+  background: var(--soot);
+}
+
+.solution li[data-route='air']::before {
+  background: var(--air-ink);
+}
+
+.solution li[data-route='cold']::before {
+  background: var(--cold-ink);
+}
+
+.solution h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.solution p {
+  margin-top: 10px;
+  color: var(--ink-2);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.plan {
+  background: var(--plaster);
+}
+
+.plan :global(.lede),
+.gallery :global(.lede) {
+  color: var(--ink-2);
+}
+
+.planFrame {
+  margin-top: clamp(32px, 4vw, 48px);
+  background: #fff;
+  padding: clamp(12px, 3vw, 40px);
+  border: 1px solid rgba(29, 29, 27, 0.15);
+}
+
+.planFrame img {
+  width: 100%;
+  height: auto;
+}
+
+.gallery {
+  background: var(--concrete);
+}
+
+.viewer {
+  margin-top: clamp(32px, 4vw, 48px);
+}
+
+@media (max-width: 900px) {
+  .workGrid,
+  .solution {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cover img {
+    height: 56svh;
+  }
+}

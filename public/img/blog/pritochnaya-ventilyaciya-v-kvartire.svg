@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="ui-monospace, Menlo, Consolas, monospace">
+  <defs>
+    <pattern id="h" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="12" stroke="#3a3a36" stroke-width="2"/>
+    </pattern>
+    <marker id="al" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#8dc73f"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#8a8880"/></marker>
+  </defs>
+  <rect width="800" height="600" fill="#1d1d1b"/>
+  <rect x="60" y="70" width="640" height="34" fill="url(#h)" stroke="#f1f0eb" stroke-width="2"/>
+  <path d="M60 104V530H700V104" fill="none" stroke="#f1f0eb" stroke-width="2"/>
+  <path d="M370 210V530" stroke="#f1f0eb" stroke-width="2"/>
+  <path d="M60 210H190M250 210H500M560 210H700" stroke="#f1f0eb" stroke-width="2" stroke-dasharray="0"/>
+  <rect x="190" y="206" width="60" height="8" fill="#8dc73f"/>
+  <rect x="500" y="206" width="60" height="8" fill="#8dc73f"/>
+  <rect x="400" y="124" width="120" height="56" fill="#2b2b28" stroke="#f1f0eb" stroke-width="2"/>
+  <text x="460" y="157" fill="#f1f0eb" font-size="16" text-anchor="middle">ПВУ</text>
+  <path d="M400 140H220V200" fill="none" stroke="#8dc73f" stroke-width="8"/>
+  <path d="M520 166H530V200" fill="none" stroke="#8dc73f" stroke-width="8"/>
+  <path d="M760 140H700M700 140H520" fill="none" stroke="#8dc73f" stroke-width="8" stroke-dasharray="14 8"/>
+  <path d="M640 210V178H520" fill="none" stroke="#8a8880" stroke-width="6" stroke-dasharray="10 8"/>
+  <path d="M520 128H760" fill="none" stroke="#8a8880" stroke-width="4"/>
+  <path d="M220 236V292" stroke="#8dc73f" stroke-width="3" marker-end="url(#al)"/>
+  <path d="M200 236L180 280" stroke="#8dc73f" stroke-width="3" marker-end="url(#al)"/>
+  <path d="M240 236L260 280" stroke="#8dc73f" stroke-width="3" marker-end="url(#al)"/>
+  <path d="M530 236V292" stroke="#8dc73f" stroke-width="3" marker-end="url(#al)"/>
+  <path d="M640 300V236" stroke="#8a8880" stroke-width="3" marker-end="url(#ag)"/>
+  <rect x="610" y="210" width="60" height="6" fill="#8a8880"/>
+  <text x="768" y="120" fill="#8a8880" font-size="13" text-anchor="end">выброс</text>
+  <text x="768" y="166" fill="#8dc73f" font-size="13" text-anchor="end">улица</text>
+  <text x="215" y="330" fill="#8dc73f" font-size="15" text-anchor="middle">приток</text>
+  <text x="640" y="330" fill="#aaa8a1" font-size="15" text-anchor="middle">вытяжка</text>
+  <text x="215" y="500" fill="#aaa8a1" font-size="14" text-anchor="middle">спальня</text>
+  <text x="535" y="500" fill="#aaa8a1" font-size="14" text-anchor="middle">гостиная · кухня</text>
+  <path d="M60 560H700M60 552V568M700 552V568" stroke="#5a5954" stroke-width="1.5"/>
+  <text x="380" y="586" fill="#5a5954" font-size="12" text-anchor="middle">разрез квартиры · подшивной потолок</text>
+</svg>

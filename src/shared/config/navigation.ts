@@ -1,5 +1,9 @@
 export const NAV_ITEMS = [
-  { href: '/', label: 'Главная', title: 'О компании и наших работах' },
-  { href: '/projects/', label: 'Проекты', title: 'Наши работы и проекты' },
-  { href: '/contacts/', label: 'Контакты', title: 'Как с нами связаться' },
+  { href: '/projects/', label: 'Проекты' },
+  { href: '/services/', label: 'Услуги' },
+  { href: '/about/', label: 'О компании' },
+  { href: '/blog/', label: 'Блог' },
+  { href: '/contacts/', label: 'Контакты' },
 ] as const;
+
+export type TNavItem = (typeof NAV_ITEMS)[number];

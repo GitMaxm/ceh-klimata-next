@@ -1,0 +1,93 @@
+.section {
+  background: var(--soot);
+  color: var(--plaster);
+  border-bottom: 1px solid var(--soot-line);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 48px clamp(40px, 6vw, 96px);
+  align-items: end;
+}
+
+.title {
+  font-weight: 800;
+  font-size: var(--fs-h2);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.lede {
+  margin-top: 20px;
+  max-width: 46ch;
+  font-size: var(--fs-lede);
+  line-height: 1.5;
+  color: var(--on-dark-2);
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.phone {
+  font-size: min(44px, calc(var(--wrap) / 13));
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--lime);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0 2px;
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 6px;
+  transition: background-size 250ms var(--ease-out);
+}
+
+.messengers {
+  display: flex;
+  gap: 10px;
+}
+
+.email {
+  padding: 10px 0;
+  font-size: 16px;
+  color: var(--on-dark-2);
+  transition: color 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .phone:hover {
+    background-size: 100% 2px;
+  }
+
+  .email:hover {
+    color: var(--plaster);
+  }
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .contacts,
+  .messengers {
+    width: 100%;
+  }
+
+  .messengers {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .messengers > * {
+    min-width: 0;
+    padding: 0 12px;
+  }
+}

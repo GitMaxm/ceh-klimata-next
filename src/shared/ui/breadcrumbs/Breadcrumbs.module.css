@@ -1,0 +1,31 @@
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 0;
+  list-style: none;
+  font-size: 14px;
+  color: var(--on-dark-2);
+}
+
+.crumbs li:not(:last-child)::after {
+  content: '/';
+  margin: 0 10px;
+  opacity: 0.5;
+}
+
+.crumbs a {
+  display: inline-block;
+  padding: 10px 0;
+  margin: -10px 0;
+  transition: color 200ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .crumbs a:hover {
+    color: var(--plaster);
+  }
+}
+
+.crumbs [aria-current] {
+  color: var(--plaster);
+}

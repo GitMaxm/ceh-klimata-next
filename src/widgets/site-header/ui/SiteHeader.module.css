@@ -1,0 +1,152 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--soot);
+  color: var(--plaster);
+  border-bottom: 1px solid var(--soot-line);
+}
+
+.bar {
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav {
+  display: flex;
+  gap: 28px;
+  margin-left: auto;
+}
+
+.link {
+  position: relative;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 6px;
+  height: 2px;
+  background: var(--lime);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 250ms var(--ease-out);
+}
+
+.link[aria-current='page']::after {
+  transform: scaleX(1);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .link:hover::after {
+    transform: scaleX(1);
+  }
+
+  .phone:hover {
+    color: var(--lime);
+  }
+}
+
+.phone {
+  font-size: 15px;
+  font-weight: 600;
+  padding: 12px 0;
+  transition: color 200ms ease;
+}
+
+.toggle {
+  display: none;
+  width: 48px;
+  height: 48px;
+  margin-right: -12px;
+  place-items: center;
+}
+
+.toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+.menu {
+  position: fixed;
+  inset: var(--header-h) 0 0;
+  z-index: 49;
+  background: var(--soot);
+  padding: 24px 0 40px;
+  overflow-y: auto;
+  opacity: 0;
+  transform: translateY(-8px);
+  visibility: hidden;
+  transition:
+    opacity 200ms var(--ease-out),
+    transform 200ms var(--ease-out),
+    visibility 0s linear 200ms;
+}
+
+.menu[data-open='true'] {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+  transition:
+    opacity 240ms var(--ease-out),
+    transform 240ms var(--ease-out),
+    visibility 0s;
+}
+
+.menuList {
+  list-style: none;
+  border-top: 1px solid var(--soot-line);
+}
+
+.menuList a {
+  display: flex;
+  align-items: center;
+  min-height: 64px;
+  border-bottom: 1px solid var(--soot-line);
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.menuList a[aria-current='page'] {
+  color: var(--lime);
+}
+
+.menuActions {
+  margin-top: 32px;
+}
+
+@media (max-width: 1100px) {
+  .nav {
+    gap: 20px;
+  }
+
+  .bar {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 960px) {
+  .nav,
+  .phone {
+    display: none;
+  }
+
+  .toggle {
+    display: grid;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 961px) {
+  .menu {
+    display: none;
+  }
+}

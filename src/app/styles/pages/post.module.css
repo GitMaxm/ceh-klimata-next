@@ -1,0 +1,24 @@
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.meta :global(.mono) {
+  font-size: 14px;
+}
+
+.article {
+  background: var(--plaster);
+}
+
+.cover {
+  max-width: 68ch;
+  margin-bottom: clamp(32px, 4vw, 48px);
+  background: var(--soot);
+}
+
+.cover img {
+  width: 100%;
+  height: auto;
+}

@@ -1,0 +1,32 @@
+.specs {
+  font-family: var(--font-mono);
+  font-size: 14px;
+  font-variant-numeric: tabular-nums;
+  border-top: 1px solid var(--line);
+}
+
+.specs[data-tone='on-dark'] {
+  --line: var(--soot-line);
+  --muted: var(--on-dark-2);
+}
+
+.specs[data-tone='on-light'] {
+  --line: rgba(29, 29, 27, 0.22);
+  --muted: var(--ink-2);
+}
+
+.specs div {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.specs dt {
+  color: var(--muted);
+}
+
+.specs dd {
+  text-align: right;
+}
