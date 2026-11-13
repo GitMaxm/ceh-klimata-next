@@ -1,0 +1,17 @@
+import './style.css';
+
+import { SocialLinks } from '@/shared/ui/main';
+
+const Footer = () => {
+  return (
+    <footer className="footer">
+      <div className="container">
+        <div className="footer__wrapper">
+          <SocialLinks />
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export { Footer };

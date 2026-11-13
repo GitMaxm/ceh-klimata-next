@@ -1,0 +1,298 @@
+/* ========== ГАЛЕРЕЯ-СЛАЙДЕР ========== */
+.project-gallery {
+  width: 88vw; 
+
+  margin: 50px 0;
+}
+
+.project-gallery .section-title {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.gallery-count {
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: 10px;
+}
+
+/* Основной слайдер */
+.gallery-main-slider {
+  margin-bottom: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+  max-width: 100%;
+}
+
+.main-swiper {
+  width: 100%;
+  height: 700px;
+  border-radius: 10px;
+  background: #000;
+}
+
+.main-swiper .swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #000;
+  position: relative;
+  height: 700px;
+}
+
+.swiper-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-img-full {
+  object-fit: contain !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.swiper-zoom-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.swiper-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 12px 15px;
+  font-size: clamp(13px, 3vw, 16px);
+  font-weight: 500;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Кнопки навигации */
+.main-swiper .swiper-button-next svg,
+.main-swiper .swiper-button-prev svg {
+  width: 20px;
+  height: 20px;
+}
+
+.main-swiper .swiper-button-next,
+.main-swiper .swiper-button-prev {
+  color: var(--text-white);
+  background: rgba(127, 185, 121, 0.8);
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.main-swiper .swiper-button-next:hover,
+.main-swiper .swiper-button-prev:hover {
+  background: var(--accent);
+  transform: scale(1.1);
+}
+
+.main-swiper .swiper-button-next::after,
+.main-swiper .swiper-button-prev::after {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Пагинация */
+.main-swiper .swiper-pagination {
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+}
+
+.main-swiper .swiper-pagination-fraction {
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: clamp(13px, 3vw, 16px);
+  font-weight: 600;
+  width: auto;
+}
+
+/* Миниатюры */
+.gallery-thumbs-slider {
+  margin-top: 12px;
+  padding: 8px 0;
+}
+
+.thumbs-swiper {
+  width: 100%;
+}
+
+.thumbs-swiper .swiper-slide {
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.thumbs-swiper .swiper-slide-thumb-active {
+  opacity: 1;
+  box-shadow: 0 0 0 3px var(--accent);
+}
+
+.thumb-wrapper {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #f0f0f0;
+}
+
+.gallery-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.thumbs-swiper .swiper-slide:hover .gallery-thumb {
+  transform: scale(1.1);
+}
+
+.gallery-hint {
+  text-align: center;
+  margin-top: 15px;
+  font-size: clamp(12px, 2.5vw, 14px);
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* Zoom */
+.swiper-zoom-container img {
+  cursor: zoom-in;
+}
+
+.swiper-zoom-container .swiper-zoom-target {
+  cursor: zoom-out;
+}
+
+.swiper-slide-zoomed .swiper-caption {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Плавное появление слайдов */
+.main-swiper .swiper-slide {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.main-swiper .swiper-slide-active {
+  opacity: 1;
+}
+
+/* Оптимизация для тач-устройств */
+@media (hover: none) {
+  .main-swiper .swiper-button-next,
+  .main-swiper .swiper-button-prev {
+    opacity: 0.8;
+  }
+
+  .main-swiper .swiper-button-next:active,
+  .main-swiper .swiper-button-prev:active {
+    opacity: 1;
+    transform: scale(0.95);
+  }
+}
+
+/* Адаптивность для галереи */
+
+/* Большие планшеты */
+@media (max-width: 1024px) {
+  .main-swiper,
+  .main-swiper .swiper-slide {
+    height: 450px;
+  }
+}
+
+/* Планшеты */
+@media (max-width: 768px) {
+  .main-swiper,
+  .main-swiper .swiper-slide {
+    height: 350px;
+  }
+
+  /* Уменьшены кнопки для планшетов */
+  .main-swiper .swiper-button-next,
+  .main-swiper .swiper-button-prev {
+    width: 30px;
+    height: 30px;
+  }
+
+  .main-swiper .swiper-button-next svg,
+  .main-swiper .swiper-button-prev svg {
+    width: 10px;
+    height: 10px;
+  }
+
+  .main-swiper .swiper-button-next::after,
+  .main-swiper .swiper-button-prev::after {
+    font-size: 12px; /* Уменьшено с 16px */
+  }
+
+  .gallery-count {
+    display: block;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
+
+/* Мобильные */
+@media (max-width: 480px) {
+  .main-swiper,
+  .main-swiper .swiper-slide {
+    height: 280px;
+  }
+
+  /* Уменьшены кнопки для мобильных */
+  .main-swiper .swiper-button-next,
+  .main-swiper .swiper-button-prev {
+    width: 28px; /* Уменьшено с 32px */
+    height: 28px; /* Уменьшено с 32px */
+  }
+
+  .main-swiper .swiper-button-next::after,
+  .main-swiper .swiper-button-prev::after {
+    font-size: 11px; /* Уменьшено с 14px */
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 360px) {
+  .main-swiper,
+  .main-swiper .swiper-slide {
+    height: 240px;
+  }
+}
+
+/* Темная тема для галереи */
+.dark .gallery-main-slider {
+  box-shadow: 0px 5px 35px rgba(255, 255, 255, 0.1);
+}
+
+.dark .thumb-wrapper {
+  background: #2a2a2a;
+}
+
+.dark .gallery-hint {
+  color: rgba(255, 255, 255, 0.6);
+}

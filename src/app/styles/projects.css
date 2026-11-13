@@ -1,0 +1,551 @@
+/* ===================================
+   СТИЛИ ДЛЯ ПРОЕКТОВ ВЕНТИЛЯЦИИ
+   Объединенные и оптимизированные
+   =================================== */
+
+/* ========== СПИСОК ПРОЕКТОВ (GRID) ========== */
+.projects {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.project {
+  max-width: 370px;
+  box-shadow: var(--box-shadow-grid);
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.project:hover {
+  box-shadow: var(--box-shadow-grid-hover);
+}
+
+.project:hover .project-img-container {
+  transform: translateY(-3px);
+}
+
+.project:hover .project-img-container img {
+  transform: scale(1.03);
+}
+
+.project-img-container {
+  border-radius: 10px;
+  width: 100%;
+  max-width: 370px;
+  aspect-ratio: 370/297;
+  overflow: hidden;
+}
+
+.project-img-container img {
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  box-shadow: var(--box-shadow-grid);
+}
+
+.project h3 {
+  color: var(--text-color);
+  padding: 15px 20px 25px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: -0.5px;
+}
+
+/* ========== СТРАНИЦА ПРОЕКТА ========== */
+
+/* Контейнер */
+.project-details {
+  /* max-width: 865px; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+}
+
+/* Заголовок */
+.project-header {
+  width: 100%;
+  margin-bottom: 40px;
+  text-align: center;
+  padding-bottom: 30px;
+  border-bottom: 2px solid var(--border);
+}
+
+.project-header .title-1 {
+  color: var(--accent);
+  font-size: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+  margin-bottom: 15px;
+}
+
+.project-location {
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 15px;
+}
+
+.project-subtitle {
+  font-size: clamp(18px, 4vw, 22px);
+  font-style: italic;
+  color: var(--accent);
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+/* Главное изображение - УМЕНЬШЕНО */
+.project-main-image {
+  width: 100%;
+  max-width: 100%;
+  margin: 30px 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.project-img-main {
+  width: 100%;
+  height: auto;
+  max-height: 450px; /* Ограничение высоты */
+  display: block;
+  border-radius: 10px;
+  box-shadow: 0px 5px 35px rgba(0, 0, 0, 0.25);
+  object-fit: contain; /* Вписывается без обрезки */
+}
+
+/* Ключевые показатели */
+.project-stats {
+  width: 100%;
+  background: linear-gradient(135deg, var(--accent) 0%, #6da467 100%);
+  color: var(--text-white);
+  padding: 30px;
+  border-radius: 10px;
+  margin: 30px 0;
+  box-shadow: var(--box-shadow-grid);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 20px;
+}
+
+.stat-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-label {
+  font-size: clamp(12px, 2.5vw, 14px);
+  opacity: 0.9;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+
+.stat-value {
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* Технологии */
+.project-technologies {
+  width: 100%;
+  margin: 30px 0;
+  padding: 25px;
+  background-color: rgba(127, 185, 121, 0.08);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+
+.project-technologies .section-title {
+  margin-bottom: 20px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tech-tag {
+  display: inline-block;
+  padding: 8px 16px;
+  background: var(--text-white);
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  border-radius: 20px;
+  font-size: clamp(14px, 3vw, 16px);
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: var(--box-shadow-grid);
+}
+
+.tech-tag:hover {
+  box-shadow: var(--box-shadow-grid-hover);
+}
+
+/* Секции */
+.project-section {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.section-title {
+  font-size: clamp(24px, 5vw, 30px);
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 3px solid var(--accent);
+  display: inline-block;
+}
+
+.section-content {
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Задача */
+.task-section {
+  background: #fff8e1;
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid #ffc107;
+}
+
+.task-section .section-title {
+  border-bottom-color: #ffc107;
+  color: #f57c00;
+}
+
+.task-section .section-content {
+  font-style: italic;
+}
+
+/* Решение */
+.solution-section {
+  margin: 40px 0;
+}
+
+.solution-items {
+  display: grid;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.solution-item {
+  background: var(--text-white);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 5px solid var(--accent);
+  box-shadow: var(--box-shadow-grid);
+  transition: all 0.3s ease;
+}
+
+.solution-item:hover {
+box-shadow: var(--box-shadow-grid-hover);
+}
+
+.solution-title {
+  font-size: clamp(20px, 4vw, 24px);
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.solution-description {
+  font-size: clamp(16px, 3.5vw, 18px);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Детали */
+.details-section {
+  margin: 40px 0;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.detail-item {
+  padding: 15px 15px 15px 45px;
+  margin: 12px 0;
+  background: var(--text-white);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-grid);
+  line-height: 1.6;
+  font-size: clamp(16px, 3.5vw, 18px);
+  font-weight: 500;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+  box-shadow: var(--box-shadow-grid-hover);
+}
+
+.detail-item::before {
+  content: "✓";
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  background: var(--accent);
+  color: var(--text-white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+/* Результат */
+.result-section {
+  background: linear-gradient(135deg, var(--accent) 0%, #5a9654 100%);
+  color: var(--text-white);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 35px rgba(127, 185, 121, 0.4);
+  margin: 40px 0;
+}
+
+.result-section .section-title {
+  color: var(--text-white);
+  border-bottom-color: rgba(255, 255, 255, 0.4);
+}
+
+.result-section .section-content {
+  color: var(--text-white);
+  font-size: clamp(18px, 4vw, 22px);
+  line-height: 1.6;
+}
+
+/* CTA блок */
+.project-cta {
+  background: linear-gradient(135deg, var(--accent) 0%, #5a9654 100%);
+  color: var(--text-white);
+  padding: 40px 30px;
+  border-radius: 10px;
+  text-align: center;
+  margin: 50px 0;
+  box-shadow: 0px 5px 35px rgba(127, 185, 121, 0.4);
+}
+
+.cta-title {
+  font-size: clamp(24px, 5vw, 32px);
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.3;
+  letter-spacing: -0.5px;
+}
+
+.cta-text {
+  font-size: clamp(16px, 4vw, 20px);
+  font-weight: 500;
+  margin-bottom: 25px;
+  opacity: 0.95;
+  line-height: 1.5;
+}
+
+.project-cta .btn-primary {
+  display: inline-block;
+  padding: 12px 35px;
+  background: var(--text-white);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: clamp(16px, 3.5vw, 18px);
+  border-radius: 25px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.project-cta .btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Навигация */
+.project-navigation {
+  width: 100%;
+  margin: 40px 0 25px;
+  text-align: center;
+}
+
+.project-navigation .btn-outline {
+  display: inline-flex;
+  padding: 10px 24px;
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  background: var(--text-white);
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: clamp(14px, 3vw, 16px);
+  transition: all 0.3s ease;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-navigation .btn-outline:hover {
+  background: var(--accent);
+  color: var(--text-white);
+  transform: translateY(-2px);
+  box-shadow: var(--box-shadow-grid-hover);
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+
+/* Большие планшеты */
+@media (max-width: 1024px) {
+  .project-img-main {
+    max-height: 400px;
+  }
+}
+
+/* Планшеты */
+@media (max-width: 768px) {
+  .project-details {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+
+  .project-img-main {
+    max-height: 350px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .project-stats,
+  .project-technologies,
+  .result-section,
+  .project-cta,
+  .task-section,
+  .solution-item,
+  .detail-item {
+    padding: 20px;
+  }
+}
+
+/* Мобильные */
+@media (max-width: 480px) {
+  .project-details {
+    padding: 0 10px;
+  }
+
+  .project-img-main {
+    max-height: 280px;
+  }
+
+  .project-header {
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+  }
+
+  .project-main-image,
+  .project-stats,
+  .project-technologies,
+  .project-section,
+  .project-gallery,
+  .project-cta {
+    margin: 25px 0;
+  }
+
+  .project-stats,
+  .project-technologies,
+  .result-section,
+  .project-cta,
+  .task-section {
+    padding: 18px;
+  }
+
+  .solution-item,
+  .detail-item {
+    padding: 15px;
+  }
+
+  .detail-item {
+    padding-left: 40px;
+  }
+
+  .detail-item::before {
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+    left: 10px;
+  }
+
+  .tech-tags {
+    gap: 8px;
+  }
+
+  .project-cta .btn-primary {
+    width: 100%;
+    padding: 12px 20px;
+  }
+
+  .project h3 {
+    font-size: 20px;
+  }
+}
+
+/* Очень маленькие экраны */
+@media (max-width: 360px) {
+  .project-img-main {
+    max-height: 240px;
+  }
+}
+
+/* ========== DARK MODE ========== */
+.dark .project-header {
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark .project-technologies {
+  background-color: rgba(127, 185, 121, 0.15);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark .tech-tag {
+  background: var(--dark-bg);
+  border-color: var(--accent);
+}
+
+.dark .tech-tag:hover {
+  background: var(--accent);
+}
+
+.dark .solution-item,
+.dark .detail-item {
+  background: var(--dark-bg);
+  border-left-color: var(--accent);
+}
+
+.dark .task-section {
+  background: rgba(255, 248, 225, 0.1);
+  border-left-color: #ffc107;
+}
